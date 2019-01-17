@@ -8,26 +8,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
       $(document).ready(function() {
-
-
-        $.get("/gimmyCats", cats => {
+        $.get('/gimmieCats', cats => {
           cats.map((cat, i) => {
-              $('.content').append(
-            `<div>
-              <img src="cat-images/${cat}" />
-              <button class="unlike" id="hide-${i}">Unlike</button>
-              <button class="like" id="show-${i}">Like! <span id="cat-${i}" style="display:none">❤️</span></button>
-              
-              <div class="comment">
-                <input class="input_listName" />
-                <button class="btn_createList">add</button>
-              </div>
-              <ul class="ul_current">
-                <li>beautiful</li>
-                <li>purrfect!</li>
-                <li>wow this is better than the egg</li>
-              </ul>
-            </div>`);
+            $('.content').append(
+              `<div>
+                <img src="cat-images/${cat}" />
+                <button class="unlike" id="hide-${i}">Unlike</button>
+                <button class="like" id="show-${i}">Like! <span id="cat-${i}" style="display:none">❤️</span></button>
+                
+                <div class="comment">
+                  <input class="input_listName" id="comment-${i}"/>
+                  <button class="btn_createList" id="add-comment-${i}">add</button>
+                </div>
+                <ul class="ul_current" id="list-comment-${i}">
+
+                </ul>
+              </div>`);
         
             $(`#hide-${i}`).click(function() {
               $(`#cat-${i}`).hide();
@@ -36,23 +32,16 @@
             $(`#show-${i}`).click(function() {
               $(`#cat-${i}`).show();
             });
-          });
-        });
 
-        $(".btn_createList").click(function() {
-          $(this)
-            .next()
-            .append(
-              $("<li>", {
-                text: $(this)
-                  .prev()
-                  .val()
-              })
-            );
+            $(`#add-comment-${i}`).click(function() {
+              const text = $(this).prev().val();
+              $(`#list-comment-${i}`).append(`<li>${text}</li>`);
+              $(this).prev().val('');
+            });
+          });
         });
       });
     </script>
-
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
