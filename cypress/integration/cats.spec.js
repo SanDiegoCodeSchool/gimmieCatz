@@ -3,7 +3,7 @@ describe('A simple functional test', function() {
       cy.visit('/');
     });
     
-    it('Should allow typing in the comment box', function() {
+    it('Should have the correct title on the page', function() {
       cy.visit('/');
       cy.get('h1').should('contain', 'RAWRR!!');
     });
