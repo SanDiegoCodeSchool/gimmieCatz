@@ -32,26 +32,54 @@ module.exports = app;
 const server = require('./server');
 
 server.listen(3030, () => console.log('Server is listening on port 3030!'));
-
 ```
 
-## Let's create an Awesome website
+Marvel in the glory of your server by running it from the command line:
+```
+node server
+```
+It will display a message that confirms it is running and then point your browser to: [localhost:3030](http://localhost:3030)
+
+🙌 You should see your page load
+
+Let's add a logger to the server so we can see the activity as requests are made:
+
+```sh
+$ npm i morgan
+```
+
+Add the following to the `server.js` file:
+
+```javascript
+const morgan = require('morgan');
+
+app.use(morgan('dev'));
+```
+
+Now when you run your server you should see each request in your terminal and some statistics about how well your server is performing.
+
+## Let's create an AWESOME 💪 website 
 
 We are going to do some test driven development (TDD).  There are some tests that have been written that will pass when we have written the correct code.
 
-Start by running the tests:
+1. Check that the page is working correctly in your browser.
 
-At the command line enter the following command:
+1. Check that our end to end tests are passing.
 
+At the command line run:
 ```
 $ ./node_modules/.bin/cypress open
 ```
 
-You should see a browser open and the tests will start running. They will all fail since we have not written code to make the site yet.
+Observe the tests running 🤞
 
-### Next, we'll get the first test passing
+OH NOOOOooooo!!  You might have ☔️ failing tests. This is ok, don't be too sad. It just means we still have some work to do to make it ✨.  
 
-Start with adding HTML to our page.
+We are going to need to add some code so that we can get the first test passing. Don't worry about the rest of the test. We will just work on a few tests at a time.
+
+### Get the first test passing
+
+Start with adding HTML to our page in `index.html`.
 
 ```html
 <body>
@@ -64,15 +92,16 @@ Start with adding HTML to our page.
 
 Add a title to the page by typing the title between the `h1` tags. Let's make it say "Hello World".
 
-#### Test that your website is working.
-
 1. Check that the page is working correctly in your browser.
 
 1. Check that our end to end tests are passing.
 
-Observe the tests running 🤞
+At the command line run:
+```
+$ ./node_modules/.bin/cypress open
+```
 
-You should have many failing tests. This is ok, don't be sad. It means we still have some work to do. Make changes to your site so that you can get the first test passing. Don't worry about the rest of the test. Just do the first one.
+Observe the tests running, we should now have the first test passing 👏👏👏👏
 
 ### PASS TEST #2 & #3
 

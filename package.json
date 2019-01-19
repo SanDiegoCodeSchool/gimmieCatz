@@ -1,5 +1,5 @@
 {
-  "name": "gimmie-catz",
+  "name": "Inzta-catz",
   "version": "0.9.0",
   "description": "Gimmie all the catz, plz 🐱",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "cy:run": "cypress run",
     "test": "start-server-and-test start http://localhost:3030 cy:run"
   },
-  "author": "",
+  "author": "San Diego Code School http://www.sdcs.io",
   "license": "MIT",
   "dependencies": {
     "cypress": "^3.1.4",
