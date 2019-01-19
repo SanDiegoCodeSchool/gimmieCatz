@@ -6,8 +6,6 @@
 $ npm start
 ```
 
-
-
 # Run the tests
 
 ```
