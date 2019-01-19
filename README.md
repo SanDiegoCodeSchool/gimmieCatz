@@ -145,9 +145,9 @@ $(document).ready(function() {
 Add the code for the comment box:
 
 ```javascript
-$(`#add-comment-${i}`).click(function() {
+$(`#add-comment-0`).click(function() {
     const text = $(this).prev().val();
-    $(`#list-comments-${i}`).append(`<li>${text}</li>`);
+    $(`#list-comments-0`).append(`<li>${text}</li>`);
     $(this).prev().val('');
 });
 ```
@@ -166,8 +166,8 @@ Add the following to our `script`:
 
 ```javascript
 $(document).ready(function() {
-    $.get('/gimmieCats', cats => {
-        cats.map((cat, i) => {
+    
+      ['cat-0.jpg','cat-1.jpg'].map((cat, i) => {
         $('.content').append(`
             <div>
                 <img src="cat-images/cat-0.jpg" />
@@ -194,7 +194,6 @@ $(document).ready(function() {
             $(`#list-comments-0`).append(`<li>${text}</li>`);
             $(this).prev().val('');
         });
-        });
     });
 });
 ```
@@ -205,6 +204,14 @@ Now figure out how to make it dynamic so that it displays the different cats.
 1. Check that our end to end tests are passing.
 
 ## Add some more Catz
+
+There are a bunch of cats on our server. Make a request to the server to get them:
+
+```javascript
+$.get('/gimmieCats', cats => {
+    // now we can iterate over our cats and show them...
+});
+```
 
 What do you need to do to add more cats?
 
