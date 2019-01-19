@@ -4,50 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Cat App</title>
+    <title>InztaCatz</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function() {
-        $.get('/gimmieCats', cats => {
-          cats.map((cat, i) => {
-            $('.content').append(
-              `<div>
-                <img src="cat-images/${cat}" />
-                <button class="unlike" id="hide-${i}">Unlike</button>
-                <button class="like" id="show-${i}">Like! <span id="cat-${i}" style="display:none">❤️</span></button>
-                
-                <div class="comment">
-                  <input class="input_listName" id="comment-${i}"/>
-                  <button class="btn_createList" id="add-comment-${i}">add</button>
-                </div>
-                <ul class="ul_current" id="list-comment-${i}">
-
-                </ul>
-              </div>`);
-        
-            $(`#hide-${i}`).click(function() {
-              $(`#cat-${i}`).hide();
-            });
-        
-            $(`#show-${i}`).click(function() {
-              $(`#cat-${i}`).show();
-            });
-
-            $(`#add-comment-${i}`).click(function() {
-              const text = $(this).prev().val();
-              $(`#list-comment-${i}`).append(`<li>${text}</li>`);
-              $(this).prev().val('');
-            });
-          });
-        });
-      });
-    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <header class="text-center"><h1>WOW.</h1></header>
-      <div class="content"></div>
-    </div>
   </body>
 </html>
