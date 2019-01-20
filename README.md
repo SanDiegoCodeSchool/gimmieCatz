@@ -77,9 +77,9 @@ OH NOOOOooooo!!  You might have ☔️ failing tests. This is ok, don't be too s
 
 We are going to need to add some code so that we can get the first test passing. Don't worry about the rest of the test. We will just work on a few tests at a time.
 
-### Get the first test passing
+### Get the second test passing
 
-Start with adding HTML to our page in `index.html`.
+Our first test checks to see if our server is alive. We should already have that working. Now we want to get the second test passing. Start with adding HTML to our page in `index.html`.
 
 ```html
 <body>
@@ -103,7 +103,7 @@ $ ./node_modules/.bin/cypress open
 
 Observe the tests running, we should now have the first test passing 👏👏👏👏
 
-### PASS TEST #2 & #3
+### PASS TEST #3 & #4
 
 Let's get this thing looking more special. Add HTML to display a single cat photo and the input fields in side the `div` that has a class `content`:
 
@@ -156,7 +156,7 @@ $(`#add-comment-0`).click(function() {
 
 1. Check that our end to end tests are passing.
 
-### PASS TEST #4
+### PASS TEST #5
 
 Inside our document read we want to loop over all the cats and replace the html programatically.
 
