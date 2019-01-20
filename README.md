@@ -246,7 +246,6 @@ We are going to build out an API that will allow CRUD operations for Images and 
 
 
 ## Getting Started
----
 
 Your system already has a tool installed (Loopback) that will let you build Loopback APIs from the command line. We are going to add a loopback project to our project to make it easier for us to build a more robust back end. Scaffold out the files for a loopback API using:
 
@@ -270,7 +269,6 @@ Choose the arrow and enter keys to select the following options:
 It will start working really hard building files and setting things up. When it gets done you DO NOT need to do any of the on screen additional next steps. We know what we are doing and we just need to review some of the files and make a few adjustments.
 
 ## Summary of New Files Created
----
 
 The main files that have been created include some that you should already be familiar with:
 ```javascript
@@ -327,7 +325,6 @@ Next, checkout the [Swagger](https://swagger.io/) interface here: [http://localh
 The Loopback Explorer has not yet created any models, but it has provided an interface that documents our api, and will allow us to do some CRUD operations.
 
 ## Middleware
----
 
 Loopback makes it easy to add middleware without touching code. You add middleware modules in a two step process.  First you need to install the package using npm, then you configure the middleware in a json object in `server/middleware.json`.
 
@@ -390,7 +387,6 @@ Let's add a way for us to store our data. Loopback calls this a `DataSource`. We
 Our server is now fully configured to have a the ability to store data peristently. This is a light weight and easy setup, but it is not designed for production use. We will need to add a real database later when we are ready to deploy to the web.
 
 ## Adding Models
----
 
 Models are used to define data objects for our API to store and retrieve. Here, we'll be adding two models: `Image` and `Comment`.
 
@@ -437,12 +433,10 @@ Test adding some values using the Loopback Explorer (try the POST and DELETE met
 Also, be sure that you can turn off the server, start it again and see your data persist.
 
 ## Insert Images using the Explorer
----
 
 Using the POST method in the Loopback Explorer create the Image records in our database we will need to display 4-5 cats in our app. It's ok to guess here!! This data will eventually allow us to replace our `gimmieCatz` endpoint with our new model.
 
 ## Create Relationships
----
 
 There are many types of relationships provided by Loopback. The most common is a one-to-many, which loopback calls a [HasMany](https://loopback.io/doc/en/lb3/HasMany-relations.html) relationship. It is described this way, but it is also attainable by using [BelongsTo](https://loopback.io/doc/en/lb3/BelongsTo-relations.html) or defining the many-to-one side. Review the documentation [here](https://loopback.io/doc/en/lb3/Creating-model-relations.html) to see more examples.
 
@@ -473,7 +467,6 @@ Next, using the Loopback Explorer review the new API endpoints. You should now s
 Also look at the POST (/comment) and note that the schema changed. Without any intervention on our end the Loopback CLI has added a `imageId` field for us. WOW!
 
 ## Insert Comments using the explorer
----
 
 Using the explorer use the `image` id to insert a few comments onto any of the images:
 
@@ -538,7 +531,6 @@ Another way to test it out is to add a new `image` using the Loopback Explorer, 
 
 
 ## Configuring
----
 
 By default we have mainly been assuming that development and production modes are the same, however in the real world, you may have separate databases, or configurations used when you run your app in production vs. in development. Another neat feature of Loopback is that it assumes file names will follow patterns.  So for example if you want to setup a configuration to only apply when the environment is development you could add the contents of the JSON file to `config.development.js` like this:
 
